@@ -5,21 +5,14 @@ const scoreEl = document.getElementById('score');
 const moshi = document.getElementById('moshi');
 const floatingContainer = document.getElementById('floating-container');
 
-const normalImg = "./asset/images/moshi_normal.png";
-const squeezedImg = "./asset/images/moshi_squeezed.png";
-const coloredImg = "./asset/images/moshi_colored.png";
-let isColored = false;
+const normalImg = "moshi_normal.png";
+const squeezedImg = "moshi_squeezed.png";
 
 moshi.addEventListener('click', (e) => {
   score += pointsPerClick;
   scoreEl.textContent = `${score} Points`;
 
-  if (score >= 60 && !isColored) {
-    isColored = true;
-    moshi.src = coloredImg;
-  } else {
-    moshi.src = squeezedImg;
-  }
+  moshi.src = squeezedImg;
 
   const floatText = document.createElement('div');
   floatText.className = 'floating-text';
@@ -30,11 +23,7 @@ moshi.addEventListener('click', (e) => {
 
   setTimeout(() => {
     document.body.removeChild(floatText);
-    if (isColored) {
-      moshi.src = coloredImg;
-    } else {
-      moshi.src = normalImg;
-    }
+    moshi.src = normalImg;
   }, 300);
 });
 
