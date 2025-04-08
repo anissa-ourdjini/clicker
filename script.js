@@ -5,8 +5,8 @@ const scoreEl = document.getElementById('score');
 const moshi = document.getElementById('moshi');
 const floatingContainer = document.getElementById('floating-container');
 
-const normalImg = "moshi_normal.png";
-const squeezedImg = "moshi_squeezed.png";
+const normalImg = "./asset/images/moshi_normal.png";
+const squeezedImg = "./asset/images/moshi_squeezed.png";
 
 moshi.addEventListener('click', (e) => {
   score += pointsPerClick;
