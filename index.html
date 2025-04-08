@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Moshi Clicker</title>
+</head>
+<body>
+  <div class="container">
+    <div class="main">
+      <div class="title">Moshi Moshi</div>
+      <div id="score">0 Points</div>
+      <img id="moshi" src="./asset/images/moshi_normal.png" alt="Moshi" />
+      <div id="floating-container"></div>
+    </div>
+    <div class="shop">
+      <h2>Boutique</h2>
+      <div class="upgrade" onclick="buyUpgrade(5, 50)">
+        <img src="./asset/images/moshi_squeezed.png" alt="Icon" width="40" style="vertical-align: middle;" />
+        <span style="font-size: 1.2rem; vertical-align: middle;">Click Power +5</span>
+        <span class="onigiri-price">🍙 50</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
