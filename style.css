@@ -1,0 +1,244 @@
+@font-face {
+    font-family: 'moshi font';
+    src: url('./moshi_font.ttf');
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: 'moshi font','Comic Sans MS', cursive, sans-serif;
+    background: #fdf1d6;
+    background-image: url('./abstract-wave-background.png');
+    background-repeat: repeat;
+    color: #4a2c1d;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    cursor: url('./disney_hand.png'), auto;
+  }
+  .container {
+    background: #f9e1b3;
+    border: 4px solid #7b3f00;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 900px;
+      max-width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+  }
+  .main, .shop {
+    flex: 1 1 400px;
+    box-sizing: border-box;
+  }
+  .main {
+    text-align: center;
+  }
+  .shop {
+    background-color: #fff3d4;
+    padding: 20px;
+    border: 2px solid #7b3f00;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .shop h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  .upgrade {
+    background-color: #f6c393;
+    padding: 15px;
+    border: 2px solid #7b3f00;
+    border-radius: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: 0.2s;
+  }
+  .upgrade:hover {
+    background-color: #f5b47a;
+  }
+  .onigiri-price {
+    background-color: #b44724;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background-color: #fae0b0;
+    border: 2px solid #7b3f00;
+    border-radius: 12px;
+    display: inline-block;
+    padding: 5px 20px;
+  }
+  #score {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+  #moshi {
+    width: 150px;
+    cursor: pointer;
+    transition: transform 0.1s;
+  }
+
+  #moshi {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.1s;
+  }
+
+  .floating-text {
+    position: absolute;
+    animation: floatUp 1s ease-out forwards;
+    font-size: 20px;
+    color: #b71c1c;
+    pointer-events: none;
+  }
+  @keyframes floatUp {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-50px); }
+  }
+  .audio-player {
+    margin-top: 20px;
+    background: #f6c393;
+    padding: 10px;
+    border: 2px solid #7b3f00;
+    border-radius: 12px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .shop {
+    background-color: #fff3d4;
+    padding: 20px;
+    border: 2px solid #7b3f00;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .shop h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .upgrade {
+    background-color: #f6c393;
+    padding: 15px;
+    border: 2px solid #7b3f00;
+    border-radius: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: 0.2s;
+  }
+  
+  .upgrade:hover {
+    background-color: #f5b47a;
+  }
+  
+  .onigiri-price {
+    background-color: #b44724;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  .skin-icon {
+    width: 40px;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+  }
+  
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .main, .shop {
+      flex: 1 1 100%;
+    }
+  
+    .title {
+      font-size: 1.8rem;
+    }
+  
+    #score {
+      font-size: 1.5rem;
+    }
+  
+    .shop h2 {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* @media (max-height: 900px) {
+    .container {
+      padding: 20px;
+      gap: 20px;
+    }
+  
+    .main, .shop {
+      flex: 1 1 100%;
+    }
+  
+    .audio-player {
+      padding: 8px;
+    }
+  
+    .title {
+      font-size: 2rem;
+      padding: 4px 16px;
+    }
+  
+    #score {
+      font-size: 1.5rem;
+    }
+  
+    #moshi {
+      max-width: 120px;
+    }
+  
+    .shop h2 {
+      font-size: 1.2rem;
+    }
+  
+    .upgrade {
+      padding: 10px;
+      font-size: 0.95rem;
+    }
+  
+    .onigiri-price {
+      padding: 3px 10px;
+      font-size: 0.9rem;
+    }
+  }
+   */
