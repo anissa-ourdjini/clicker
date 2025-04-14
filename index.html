@@ -1,33 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/png" href="./favicon.ico">
+  <meta charset="UTF-8" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
   <title>Moshi Clicker</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="container">
+<div class="container">
     <div class="main">
-      <div class="title">Moshi Moshi</div>
+      <div class="title">
+        <img src="./moshi_moshi_logo.png" alt="Moshi Logo" style="max-width: 250px; height: auto;" />
+      </div>
       <div id="score">0 Points</div>
-      <img id="moshi" src="./asset/images/moshi_normal.png" alt="Moshi" />
+      <img id="moshi" src="./assets/skins/moshi_normal.png" alt="Moshi" />
       <div id="floating-container"></div>
+      <div class="audio-player">
+        <audio id="bg-music" controls loop>
+          <source src="./assets/musics/SwiftDragonDance.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio><br/>
+        <button onclick="changeMusic('./assets/musics/SwiftDragonDance.mp3')">Swift Dragon's Dance</button>
+        <button onclick="changeMusic('./assets/musics/SliceBeats.mp3')">Slice Beats</button>
+        <button onclick="changeMusic('./assets/musics/SlicingHarmony.mp3')">Slicing Harmony</button>
+      </div>
     </div>
     <div class="shop">
       <h2>Boutique</h2>
       <div class="upgrade" onclick="buyUpgrade(5, 50)">
-        <img src="./asset/images/moshi_squeezed.png" alt="Icon" width="40" style="vertical-align: middle;" />
-        <span style="font-size: 1.2rem; vertical-align: middle;">Click Power +5</span>
+        <span>Click Power +5</span>
         <span class="onigiri-price">🍙 50</span>
       </div>
+      <hr>
+      <h2>Les Skins</h2>
       <div class="upgrade" onclick="buySkin('rose', 15)">
-        <img src="./asset/images/moshi_rose_normal.png" alt="Rose" width="40" style="vertical-align: middle;" />
-        <span style="font-size: 1.2rem; vertical-align: middle;">Skin Rose</span>
+        <img src="./assets/skins/moshi_rose_normal.png" alt="Rose Moshi" style="width: 40px; vertical-align: middle; margin-right: 10px;" />
+        <span>Skin Rose</span>
         <span class="onigiri-price">🍙 15</span>
+      </div>
+      <div class="upgrade" onclick="buySkin('rocker', 35)">
+        <img src="./assets/skins/moshi_rocker_normal.png" alt="Rocker Moshi" style="width: 40px; vertical-align: middle; margin-right: 10px;" />
+        <span>Skin Rocker</span>
+        <span class="onigiri-price">🍙 35</span>
+      </div>
+      <div class="upgrade" onclick="buySkin('wizard', 55)">
+        <img src="./assets/skins/moshi_potter_normal.png" alt="Potter Moshi" style="width: 40px; vertical-align: middle; margin-right: 10px;" />
+        <span>Skin Moshi Potter</span>
+        <span class="onigiri-price">🍙 55</span>
+      </div>
+      <div class="upgrade" onclick="buySkin('rainbow', 100)">
+        <img src="./assets/skins/moshi_rainbow_normal.png" alt="Rainbow Moshi" style="width: 40px; vertical-align: middle; margin-right: 10px;" />
+        <span>Skin Rainbow</span>
+        <span class="onigiri-price">🍙 100</span>
+      </div>
+      <div class="upgrade" onclick="buySkin('anissa', 250)">
+        <img src="./assets/skins/moshi_anissa_normal.png" alt="Moshi Anissa" style="width: 40px; vertical-align: middle; margin-right: 10px;" />
+        <span>Skin Moshi Anissa</span>
+        <span class="onigiri-price">🍙 250</span>
+      </div>
+      <div class="upgrade" onclick="buySkin('gold', 999)">
+        <img src="./assets/skins/moshi_gold_normal.png" alt="Moshi Gold" style="width: 40px; vertical-align: middle; margin-right: 10px;" />
+        <span>Skin Gold</span>
+        <span class="onigiri-price">🍙 999</span>
       </div>
     </div>
   </div>
+  <script src="./script.js"></script>
 </body>
 </html>
