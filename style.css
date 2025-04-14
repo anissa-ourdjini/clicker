@@ -183,6 +183,10 @@ body {
       padding: 20px;
     }
   
+
+
+
+
     .main, .shop {
       flex: 1 1 100%;
     }
@@ -199,6 +203,15 @@ body {
       font-size: 1.2rem;
     }
   }
+
+  @media (max-width: 320px) {
+   .title img {
+    width: 50%;
+   }
+  }
+
+
+
   
   /* @media (max-height: 900px) {
     .container {
