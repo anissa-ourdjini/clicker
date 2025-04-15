@@ -66,17 +66,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   window.resetGame = function() {
-    // Réinitialiser les variables
     score = 0;
     pointsPerClick = 1;
     currentSkin = 'default';
 
-    // Mettre à jour le localStorage
+   
     localStorage.setItem('score', score);
     localStorage.setItem('pointsPerClick', pointsPerClick);
     localStorage.setItem('currentSkin', currentSkin);
 
-    // Mettre à jour l'interface utilisateur
+   
     scoreEl.textContent = `${score} Points`;
     moshi.src = skins[currentSkin].normal;
 
