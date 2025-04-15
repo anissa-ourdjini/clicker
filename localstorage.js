@@ -1,14 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
-    let score = parseInt(localStorage.getItem('score')) || 0;
-    let pointsPerClick = parseInt(localStorage.getItem('pointsPerClick')) || 1;
-    let currentSkin = localStorage.getItem('currentSkin') || 'default';
+// Déclarez les variables globalement
+let score = 0;
+let pointsPerClick = 1;
+let currentSkin = 'default';
+let scoreEl, moshi, skins;
 
-    const scoreEl = document.getElementById('score');
-    const moshi = document.getElementById('moshi');
+// Initialisation après le chargement du DOM
+document.addEventListener("DOMContentLoaded", () => {
+    score = parseInt(localStorage.getItem('score')) || 0;
+    pointsPerClick = parseInt(localStorage.getItem('pointsPerClick')) || 1;
+    currentSkin = localStorage.getItem('currentSkin') || 'default';
+
+    scoreEl = document.getElementById('score');
+    moshi = document.getElementById('moshi');
     const floatingContainer = document.getElementById('floating-container');
     const musicPlayer = document.getElementById('bg-music');
 
-    const skins = {
+    skins = {
         default: { normal: './assets/skins/moshi_normal.png', squeezed: './assets/skins/moshi_squeezed.png' },
         rose: { normal: './assets/skins/moshi_rose_normal.png', squeezed: './assets/skins/moshi_rose_squeezed.png' },
         rainbow: { normal: './assets/skins/moshi_rainbow_normal.png', squeezed: './assets/skins/moshi_rainbow_squeezed.png' },
@@ -18,14 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
         gold: { normal: './assets/skins/moshi_gold_normal.png', squeezed: './assets/skins/moshi_gold_squeezed.png' }
     };
 
-    // Update UI with initial values
+    // Mettre à jour l'interface utilisateur avec les valeurs initiales
     scoreEl.textContent = `${score} Points`;
     moshi.src = skins[currentSkin].normal;
 
     moshi.addEventListener('click', (e) => {
         score += pointsPerClick;
         scoreEl.textContent = `${score} Points`;
-        localStorage.setItem('score', score); // Save score to localStorage
+        localStorage.setItem('score', score); // Sauvegarder le score dans localStorage
 
         moshi.src = skins[currentSkin].squeezed;
 
@@ -47,8 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
             pointsPerClick += increase;
             score -= cost;
             scoreEl.textContent = `${score} Points`;
-            localStorage.setItem('score', score); // Save score to localStorage
-            localStorage.setItem('pointsPerClick', pointsPerClick); // Save pointsPerClick to localStorage
+            localStorage.setItem('score', score); // Sauvegarder le score dans localStorage
+            localStorage.setItem('pointsPerClick', pointsPerClick); // Sauvegarder pointsPerClick dans localStorage
         } else {
             alert("Not enough points!");
         }
@@ -60,8 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
             score -= cost;
             scoreEl.textContent = `${score} Points`;
             moshi.src = skins[currentSkin].normal;
-            localStorage.setItem('score', score); // Save score to localStorage
-            localStorage.setItem('currentSkin', currentSkin); // Save currentSkin to localStorage
+            localStorage.setItem('score', score); // Sauvegarder le score dans localStorage
+            localStorage.setItem('currentSkin', currentSkin); // Sauvegarder currentSkin dans localStorage
         } else {
             alert("Not enough points to buy this skin!");
         }
@@ -72,3 +79,22 @@ document.addEventListener("DOMContentLoaded", () => {
         musicPlayer.play();
     };
 });
+
+// Fonction pour réinitialiser le jeu
+window.resetGame = function() {
+    // Réinitialiser les variables
+    score = 0;
+    pointsPerClick = 1;
+    currentSkin = 'default';
+
+    // Mettre à jour le localStorage
+    localStorage.setItem('score', score);
+    localStorage.setItem('pointsPerClick', pointsPerClick);
+    localStorage.setItem('currentSkin', currentSkin);
+
+    // Mettre à jour l'interface utilisateur
+    scoreEl.textContent = `${score} Points`;
+    moshi.src = skins[currentSkin].normal;
+
+    alert("Le jeu a été réinitialisé !");
+};
